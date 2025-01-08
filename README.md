@@ -1,5 +1,4 @@
-# AIPW
-Example:
+# This program integrates AIPW method with T-learner.
 # Example Data
 ```
 import pandas as pd
