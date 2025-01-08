@@ -16,29 +16,7 @@ from sklearn.metrics import roc_auc_score
 import shap
 from matplotlib.backends.backend_pdf import PdfPages
 import statsmodels.api as sm
-#
-# # Set random seed for reproducibility
-# np.random.seed(123)
-#
-# # Generate synthetic data
-# X = np.random.normal(size=(1000, 5))
-# T = np.random.binomial(1, scipy.special.expit(X[:, 0]))
-# y = (1 + 0.5 * X[:, 0]) * T + X[:, 0] + np.random.normal(size=(1000,))
-#
-# # Initialize TLearner with LightGBM model
-# est = TLearner(models=LGBMRegressor())
-#
-# # Fit the model
-# est.fit(y, T, X=X)
-#
-# # Predict treatment effects
-# treatment_effects = est.predict(X)
-#
-# # Print the predicted treatment effects
-# print(treatment_effects)
-#
-# results = est.ate_inference(X)
-# print(results)
+
 class AIPW_learner:
     def __init__(self,X,T,Y,
                     learner="Tlearner",
@@ -491,11 +469,3 @@ class AIPW_learner:
         plt.savefig('balance_plot.png')
         plt.show()
         return weights,sorted_X_columns,sorted_coef,sorted_CI_l,sorted_CI_u
-
-# X = data[features]
-# Y = pd.Series(data['outcome'])
-# T = pd.Series(data['treatment'])
-# AIPW=AIPW_learner()
-# results=AIPW.fit(X,T,Y,trim_level=0,CI_method="CLT")
-# AIPW.shap_plot(X,T,Y)
-# AIPW.overlap_plot(X,T,Y,trim_level=0)
