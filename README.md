@@ -46,8 +46,8 @@ results=AIPW.fit(X,T,Y) #returns ATE and CI
 ```
 AIPW.balance_plt(X,T,Y)
 AIPW.overlap_plot(X,T,Y)
-AIPW.trim_summary(X,T,Y) # return percentage of samples being treated and the propensity score range of the trimmed observations.
-AIPW.trim_shap(X,T) #SHAP summary plots for explaining which observations are more likely to be trimmed. Need to specify a trim level >0 when fit the model.
+AIPW.trim_summary(X,T,Y) # return percentage of samples being treated and the propensity score range of the trimmed observations. Need to specify a trim level >0 when fit the model.
+AIPW.trim_shap(X,T) #SHAP summary plots for explaining which observations are more likely to be trimmed. 
 AIPW.shap_plot(X,T,Y) # SHAP summary plots for each model.
-p=AIPW.propensity_score(X,T,Y) #return p_score, AUC, SHAP values for the propensity score model
+AIPW.propensity_score(X,T,Y) #return p_score, AUC, SHAP values for the propensity score model
 ```
